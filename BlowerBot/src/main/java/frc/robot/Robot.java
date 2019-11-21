@@ -8,16 +8,15 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot;
-
-
  
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import frc.robot.subsystems.SubsystemCompressor;
-import frc.robot.subsystems.SubsystemDrive;
 import frc.robot.subsystems.SubsystemCowbell;
+import frc.robot.subsystems.SubsystemDrive;
 import frc.robot.subsystems.SubsystemHorn;
+
 
 /**
  * 3695 Spirit Robot!
@@ -36,11 +35,11 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    oi =             new OI();
     SUB_DRIVE =      new SubsystemDrive();
     SUB_COWBELL =    new SubsystemCowbell();
     SUB_HORN =       new SubsystemHorn();
     SUB_COMPRESSOR = new SubsystemCompressor();
+    oi =             new OI();
 
     DriverStation.reportWarning("ROBOT INIT, HAVE FUN", false);
   }

@@ -8,10 +8,11 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
 public class ManualCommandDrive extends Command {
   public ManualCommandDrive() {
-    
+    requires(Robot.SUB_DRIVE);
   }
 
   // Called just before this Command runs the first time
