@@ -17,30 +17,30 @@ import frc.robot.util.Xbox;
 import frc.robot.commands.ManualCommandDrive;
 
 /**
- * Add your docs here.
+ * The thing that makes the wheels move bro
  */
 public class SubsystemDrive extends Subsystem {
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
-
+  
   private TalonSRX
-    left,
-    right;
+    leftMaster,
+    leftSlave,
+    rightMaster,
+    rightSlave;
 
 
   public SubsystemDrive() {
-    left = new TalonSRX(Constants.LEFT_DRIVE_ID);
-    right = new TalonSRX(Constants.RIGHT_DRIVE_ID);
+    leftMaster  = new TalonSRX(Constants.DRIVE_LEFT_MASTER_ID);
+    leftSlave   = new TalonSRX(Constants.DRIVE_LEFT_SLAVE_ID);
+    rightMaster = new TalonSRX(Constants.DRIVE_RIGHT_MASTER_ID);
+    rightSlave  = new TalonSRX(Constants.DRIVE_RIGHT_SLAVE_ID);
   }
 
   @Override
   public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
     setDefaultCommand(new ManualCommandDrive());
   }
 
-  public void Drive(Joystick joy) {
+  public void drive(Joystick joy) {
     double throttle = Xbox.RT(joy) - Xbox.LT(joy);
     double steering = Xbox.LEFT_X(joy);
 
@@ -50,7 +50,13 @@ public class SubsystemDrive extends Subsystem {
     driveRight = (driveRight < 0 ? 0 : (driveRight > 1 ? 1 : driveRight));
     driveLeft = (driveLeft < 0 ? 0 : (driveLeft > 1 ? 1 : driveLeft));
 
-    right.set(ControlMode.PercentOutput, driveRight);
-    left.set(ControlMode.PercentOutput, driveLeft);
+    SetMotors(driveLeft, driveRight);
+  }
+
+  public void SetMotors(double left, double right) {
+    leftMaster.set(ControlMode.PercentOutput, left);
+    leftSlave.set(ControlMode.PercentOutput, left);
+    rightMaster.set(ControlMode.PercentOutput, right);
+    rightSlave.set(ControlMode.PercentOutput, right);
   }
 }

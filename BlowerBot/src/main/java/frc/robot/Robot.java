@@ -9,17 +9,26 @@
 
 package frc.robot;
 
+
+ 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import frc.robot.subsystems.SubsystemCompressor;
 import frc.robot.subsystems.SubsystemDrive;
+import frc.robot.subsystems.SubsystemCowbell;
+import frc.robot.subsystems.SubsystemHorn;
 
 /**
- * Robot!
+ * 3695 Spirit Robot!
  */
 public class Robot extends TimedRobot {
 
-  public static SubsystemDrive SUB_DRIVE;
+  public static SubsystemDrive      SUB_DRIVE;
+  public static SubsystemCowbell    SUB_COWBELL;
+  public static SubsystemHorn       SUB_HORN;
+  public static SubsystemCompressor SUB_COMPRESSOR;
+  public static OI                  oi;
 
   /**
    * This function is run when the robot is first started up and should be
@@ -27,7 +36,12 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    SUB_DRIVE = new SubsystemDrive();
+    oi =             new OI();
+    SUB_DRIVE =      new SubsystemDrive();
+    SUB_COWBELL =    new SubsystemCowbell();
+    SUB_HORN =       new SubsystemHorn();
+    SUB_COMPRESSOR = new SubsystemCompressor();
+
     DriverStation.reportWarning("ROBOT INIT, HAVE FUN", false);
   }
 
