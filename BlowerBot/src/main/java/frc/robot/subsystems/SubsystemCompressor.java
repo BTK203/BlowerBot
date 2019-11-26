@@ -17,8 +17,8 @@ public class SubsystemCompressor extends Subsystem {
   private Compressor compressor;
 
   public SubsystemCompressor() {
-    // compressor = new Compressor();
-    // compressor.start();
+    compressor = new Compressor();
+    compressor.start();
   }
 
   @Override
@@ -26,10 +26,14 @@ public class SubsystemCompressor extends Subsystem {
   }
 
   public void setEnabled(boolean running) {
-    // if(!running) {
-    //   compressor.stop();
-    // } else {
-    //   compressor.start();
-    // }
+    if(!running) {
+      compressor.stop();
+    } else {
+      compressor.start();
+    }
+  }
+
+  public boolean pressureSwitchTriggered() {
+    return compressor.getPressureSwitchValue();
   }
 }

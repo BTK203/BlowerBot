@@ -50,6 +50,9 @@ public class Robot extends TimedRobot {
   @Override
   public void robotPeriodic() {
     Scheduler.getInstance().run();
+
+    String pressureString = (SUB_COMPRESSOR.pressureSwitchTriggered() ? "PRESSURE SWITCH: TRUE" : "PRESSURE SWITCH: FALSE");
+    DriverStation.reportWarning(pressureString, false);
   }
 
   /**
