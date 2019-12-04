@@ -9,11 +9,13 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.util.Xbox;
 import frc.robot.commands.ButtonCommandBlowLoudHorn;
 import frc.robot.commands.ButtonCommandBlowDoubleHorn;
 import frc.robot.commands.ButtonCommandBlowBothHorns;
 import frc.robot.commands.ButtonCommandDriveCowbells;
+import frc.robot.commands.InstantCommandToggleCompressor;
 
 /**
  * Controllers, button controls, and thats about it.
@@ -23,6 +25,8 @@ public class OI {
     public static Joystick OPERATOR = new Joystick(1);
 
     public OI() {
+        //dashboard buttons
+        SmartDashboard.putData("Toggle Compressor", new InstantCommandToggleCompressor());
 
         //operator controls
 

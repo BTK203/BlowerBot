@@ -24,7 +24,7 @@ public class Constants {
         COWBELL_MOTOR_ID = 5;
 
     //Horn Solenoid IDs
-    public static final int 
+    public static final int
         LOUD_HORN_ID = 0,
         DOUBLE_HORN_ID = 1;
 

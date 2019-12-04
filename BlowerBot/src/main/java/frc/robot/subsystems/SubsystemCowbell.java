@@ -18,10 +18,10 @@ import frc.robot.util.Util;
  * Add your docs here.
  */
 public class SubsystemCowbell extends Subsystem {
-  // private TalonSRX cowbell;
+  private TalonSRX cowbell;
 
   public SubsystemCowbell() {
-    // cowbell = new TalonSRX(Constants.COWBELL_MOTOR_ID);
+    cowbell = new TalonSRX(Constants.COWBELL_MOTOR_ID);
   }
 
   @Override
@@ -29,11 +29,11 @@ public class SubsystemCowbell extends Subsystem {
   }
 
   public void spin() {
-    // double bellDriveValue = Util.getAndSetDouble("Cowbell Drive Power", Constants.COWBELL_DRIVE_VALUE);
-    // cowbell.set(ControlMode.PercentOutput, bellDriveValue);
+    double bellDriveValue = Util.getAndSetDouble("Cowbell Drive Power", Constants.COWBELL_DRIVE_VALUE);
+    cowbell.set(ControlMode.PercentOutput, bellDriveValue);
   }
 
   public void stopSpinning() {
-    // cowbell.set(ControlMode.PercentOutput, 0);
+    cowbell.set(ControlMode.PercentOutput, 0);
   }
 }

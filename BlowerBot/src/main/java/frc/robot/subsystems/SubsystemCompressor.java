@@ -33,6 +33,10 @@ public class SubsystemCompressor extends Subsystem {
     }
   }
 
+  public boolean getEnabled() {
+    return this.compressor.enabled();
+  }
+
   public boolean pressureSwitchTriggered() {
     return compressor.getPressureSwitchValue();
   }

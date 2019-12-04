@@ -15,13 +15,16 @@ import edu.wpi.first.wpilibj.Solenoid;
  * Add your docs here.
  */
 public class SubsystemHorn extends Subsystem {
-  // private Solenoid
-  //   loudHorn,
-  //   doubleHorn;
+  private Solenoid
+    loudHorn,
+    doubleHorn;
 
   public SubsystemHorn() {
-    // loudHorn   = new Solenoid(Constants.LOUD_HORN_ID);
-    // doubleHorn = new Solenoid(Constants.DOUBLE_HORN_ID);
+    loudHorn   = new Solenoid(Constants.LOUD_HORN_ID);
+    doubleHorn = new Solenoid(Constants.DOUBLE_HORN_ID);
+
+    loudHorn.set(false);
+    doubleHorn.set(false);
   }
   
   @Override
@@ -29,15 +32,15 @@ public class SubsystemHorn extends Subsystem {
   }
 
   public void setLoudHornIsBlowing(boolean blowing) {
-    // loudHorn.set(blowing);
+    loudHorn.set(blowing);
   }
 
   public void setDoubleHornIsBlowing(boolean blowing) {
-    // doubleHorn.set(blowing);
+    doubleHorn.set(blowing);
   }
 
   public void stopHorns() {
-    // loudHorn.set(false);
-    // doubleHorn.set(false);
+    loudHorn.set(false);
+    doubleHorn.set(false);
   }
 }
