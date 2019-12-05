@@ -8,6 +8,7 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -22,6 +23,7 @@ public class SubsystemCowbell extends Subsystem {
 
   public SubsystemCowbell() {
     cowbell = new TalonSRX(Constants.COWBELL_MOTOR_ID);
+    setBraking(true);
   }
 
   @Override
@@ -30,10 +32,14 @@ public class SubsystemCowbell extends Subsystem {
 
   public void spin() {
     double bellDriveValue = Util.getAndSetDouble("Cowbell Drive Power", Constants.COWBELL_DRIVE_VALUE);
-    cowbell.set(ControlMode.PercentOutput, bellDriveValue);
+    cowbell.set(ControlMode.PercentOutput, 1);
   }
 
   public void stopSpinning() {
     cowbell.set(ControlMode.PercentOutput, 0);
+  }
+
+  private void setBraking(boolean brake) {
+    cowbell.setNeutralMode((brake ? NeutralMode.Brake : NeutralMode.Coast));
   }
 }

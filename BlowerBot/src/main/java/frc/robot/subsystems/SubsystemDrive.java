@@ -8,11 +8,13 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.Constants;
+import frc.robot.util.Util;
 import frc.robot.util.Xbox;
 import frc.robot.commands.ManualCommandDrive;
 
@@ -33,7 +35,11 @@ public class SubsystemDrive extends Subsystem {
     leftSlave   = new TalonSRX(Constants.DRIVE_LEFT_SLAVE_ID);
     rightMaster = new TalonSRX(Constants.DRIVE_RIGHT_MASTER_ID);
     rightSlave  = new TalonSRX(Constants.DRIVE_RIGHT_SLAVE_ID);
+
+    //configure settings
     setInverts();
+    setBraking(true);
+    setRamps();
   }
 
   @Override
@@ -66,5 +72,22 @@ public class SubsystemDrive extends Subsystem {
     leftSlave.set(ControlMode.PercentOutput, left);
     rightMaster.set(ControlMode.PercentOutput, right);
     rightSlave.set(ControlMode.PercentOutput, right);
+  }
+
+  private void setBraking(boolean braking) {
+    NeutralMode newMode = (braking ? NeutralMode.Brake : NeutralMode.Coast);
+
+    leftMaster.setNeutralMode(newMode);
+    leftSlave.setNeutralMode(newMode);
+    rightMaster.setNeutralMode(newMode);
+    rightSlave.setNeutralMode(newMode);
+  }
+
+  private void setRamps() {
+    double ramp = Util.getAndSetDouble("Drive Ramps", Constants.DRIVE_RAMPS);
+    leftMaster.configOpenloopRamp(ramp);
+    leftSlave.configOpenloopRamp(ramp);
+    rightMaster.configOpenloopRamp(ramp);
+    rightSlave.configOpenloopRamp(ramp);
   }
 }

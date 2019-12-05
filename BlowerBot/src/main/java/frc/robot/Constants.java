@@ -25,12 +25,13 @@ public class Constants {
 
     //Horn Solenoid IDs
     public static final int
-        LOUD_HORN_ID = 0,
-        DOUBLE_HORN_ID = 1;
+        LOUD_HORN_ID = 7,
+        DOUBLE_HORN_ID = 6;
 
-    //Some drive values
+    //Some default drive values. Dont take these values though, take them from dash. Only used as backups.
     public static final double
-        COWBELL_DRIVE_VALUE = 0.25;
+        COWBELL_DRIVE_VALUE = 0.25,
+        DRIVE_RAMPS = 0.25;
 
     //Drive motor inverts
     public static final boolean
