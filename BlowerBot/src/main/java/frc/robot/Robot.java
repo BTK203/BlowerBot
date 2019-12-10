@@ -52,7 +52,16 @@ public class Robot extends TimedRobot {
   public void robotPeriodic() {
     Scheduler.getInstance().run();
 
+    //update dashboard values
     SmartDashboard.putBoolean("Pressure Switch", SUB_COMPRESSOR.pressureSwitchTriggered());
+
+    SmartDashboard.putNumber("Right Power", SUB_DRIVE.getSpeeds()[0]);
+    SmartDashboard.putNumber("Left Power", SUB_DRIVE.getSpeeds()[1]);
+
+    SmartDashboard.putNumber("Right Master Amps", SUB_DRIVE.getAmps()[0]);
+    SmartDashboard.putNumber("Left Master Amps", SUB_DRIVE.getAmps()[1]);
+    SmartDashboard.putNumber("Right Slave Amps", SUB_DRIVE.getAmps()[2]);
+    SmartDashboard.putNumber("Left Slave Amps", SUB_DRIVE.getAmps()[3]);
   }
 
   /**

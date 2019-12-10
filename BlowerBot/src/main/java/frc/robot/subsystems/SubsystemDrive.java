@@ -64,14 +64,46 @@ public class SubsystemDrive extends Subsystem {
     driveRight = (driveRight < -1 ? -1 : (driveRight > 1 ? 1 : driveRight));
     driveLeft = (driveLeft < -1 ? -1 : (driveLeft > 1 ? 1 : driveLeft));
 
-    SetMotors(driveLeft, driveRight);
+    setMotors(driveLeft, driveRight);
   }
 
-  public void SetMotors(double left, double right) {
+  public void setMotors(double left, double right) {
     leftMaster.set(ControlMode.PercentOutput, left);
     leftSlave.set(ControlMode.PercentOutput, left);
     rightMaster.set(ControlMode.PercentOutput, right);
     rightSlave.set(ControlMode.PercentOutput, right);
+  }
+
+  /**
+   * Returns an array containing the speeds the motors are set to.
+   * [0] = right speed
+   * [1] = left speed
+   */
+  public double[] getSpeeds() {
+    double[] speeds = {
+      rightMaster.getMotorOutputPercent(),
+      leftMaster.getMotorOutputPercent()
+    };
+
+    return speeds;
+  }
+
+  /**
+   * Returns an array containing the amp draw of the motors.
+   * [0] = right master amps
+   * [1] = left master amps
+   * [2] = right slave amps
+   * [3] = left slave amps
+   */
+  public double[] getAmps() {
+    double[] amps = {
+      rightMaster.getOutputCurrent(),
+      leftMaster.getOutputCurrent(),
+      rightSlave.getOutputCurrent(),
+      leftSlave.getOutputCurrent()
+    };
+
+    return amps;
   }
 
   private void setBraking(boolean braking) {
