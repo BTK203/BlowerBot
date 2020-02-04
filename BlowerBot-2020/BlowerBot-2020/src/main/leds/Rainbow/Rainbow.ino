@@ -1,11 +1,18 @@
 #include <Adafruit_NeoPixel.h>
 
-//#define PIN1 5
-//#define PIN2 6
-
 const int
 LEFTPIN = 5,
 RIGHTPIN = 6;
+
+
+/**
+ * TO WHOM IT MAY CONCERN:
+ * DO NOT CLOSE THIS WINDOW UNTIL THE LEDS ARE GOOD
+ * 
+ * To push the code:
+ * Connect Arduino and select it under Tools->Port->COMX (Arduino/Genuino Uno)
+ * push "Upload" button (the arrow pointing right)
+ */
 
 /**
    LED code for the Spirit bot!

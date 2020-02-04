@@ -10,19 +10,6 @@
         "hgap": 16.0,
         "vgap": 16.0,
         "tiles": {
-          "12,2": {
-            "size": [
-              3,
-              1
-            ],
-            "content": {
-              "_type": "Boolean Box",
-              "_source0": "network_table:///SmartDashboard/Pressure Switch",
-              "_title": "Pressurized",
-              "Colors/Color when true": "#7CFC00FF",
-              "Colors/Color when false": "#8B0000FF"
-            }
-          },
           "15,0": {
             "size": [
               4,
@@ -35,18 +22,7 @@
               "Miscellaneous/Show search box": true
             }
           },
-          "12,0": {
-            "size": [
-              3,
-              1
-            ],
-            "content": {
-              "_type": "Command",
-              "_source0": "network_table:///SmartDashboard/Toggle Compressor",
-              "_title": "Toggle Compressor"
-            }
-          },
-          "12,3": {
+          "12,4": {
             "size": [
               3,
               2
@@ -153,17 +129,53 @@
               }
             }
           },
-          "12,1": {
+          "12,2": {
+            "size": [
+              3,
+              2
+            ],
+            "content": {
+              "_type": "Grid Layout",
+              "_title": "Grid Layout",
+              "Layout/Number of columns": 3,
+              "Layout/Number of rows": 3,
+              "Layout/Label position": "BOTTOM",
+              "_children": {
+                "0,0": {
+                  "_type": "Boolean Box",
+                  "_source0": "network_table:///LiveWindow/Ungrouped/Compressor[0]/Enabled",
+                  "_title": "Running",
+                  "Colors/Color when true": "#7CFC00FF",
+                  "Colors/Color when false": "#8B0000FF"
+                },
+                "1,0": {
+                  "_type": "Boolean Box",
+                  "_source0": "network_table:///SmartDashboard/Pressure Switch",
+                  "_title": "Pressurized",
+                  "Colors/Color when true": "#7CFC00FF",
+                  "Colors/Color when false": "#8B0000FF"
+                }
+              }
+            }
+          },
+          "12,0": {
             "size": [
               3,
               1
             ],
             "content": {
-              "_type": "Boolean Box",
-              "_source0": "network_table:///LiveWindow/Ungrouped/Compressor[0]/Enabled",
-              "_title": "Compressor Enabled",
-              "Colors/Color when true": "#7CFC00FF",
-              "Colors/Color when false": "#8B0000FF"
+              "_type": "Grid Layout",
+              "_title": "Commands",
+              "Layout/Number of columns": 3,
+              "Layout/Number of rows": 3,
+              "Layout/Label position": "BOTTOM",
+              "_children": {
+                "0,0": {
+                  "_type": "Command",
+                  "_source0": "network_table:///SmartDashboard/Toggle Compressor",
+                  "_title": "Toggle Compressor"
+                }
+              }
             }
           }
         }

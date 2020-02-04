@@ -1,7 +1,0 @@
-Spirit bot subs
-
- - drivetrain: 2 left talons, 2 right talons
- - horns: two solenoids
- - cowbells: 1 talon
- - lights
- - compressor

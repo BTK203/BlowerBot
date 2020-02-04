@@ -32,7 +32,7 @@ public class SubsystemCowbell extends Subsystem {
 
   public void spin() {
     double bellDriveValue = Util.getAndSetDouble("Cowbell Drive Power", Constants.COWBELL_DRIVE_VALUE);
-    cowbell.set(ControlMode.PercentOutput, 1);
+    cowbell.set(ControlMode.PercentOutput, bellDriveValue);
   }
 
   public void stopSpinning() {
