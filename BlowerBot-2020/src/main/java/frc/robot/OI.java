@@ -31,19 +31,19 @@ public class OI {
         //operator controls
 
         //blow big horn exclusively
-        JoystickButton blowLoudHorn = new JoystickButton(OPERATOR, Xbox.A);
+        JoystickButton blowLoudHorn = new JoystickButton(OPERATOR, Xbox.B);
             blowLoudHorn.whileHeld(new ButtonCommandBlowLoudHorn());
 
         //blow double horn exclusively
-        JoystickButton blowDoubleHorn = new JoystickButton(OPERATOR, Xbox.B);
+        JoystickButton blowDoubleHorn = new JoystickButton(OPERATOR, Xbox.Y);
             blowDoubleHorn.whileHeld(new ButtonCommandBlowDoubleHorn());
 
         //blow both horns
-        JoystickButton blowBothHorns = new JoystickButton(OPERATOR, Xbox.X);
+        JoystickButton blowBothHorns = new JoystickButton(OPERATOR, Xbox.A);
             blowBothHorns.whileHeld(new ButtonCommandBlowBothHorns());
 
         //ring the cowbells
-        JoystickButton ringCowbells = new JoystickButton(OPERATOR, Xbox.Y);
+        JoystickButton ringCowbells = new JoystickButton(OPERATOR, Xbox.X);
             ringCowbells.whileHeld(new ButtonCommandDriveCowbells());
     }
 }
