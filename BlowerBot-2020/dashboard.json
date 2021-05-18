@@ -177,6 +177,105 @@
                 }
               }
             }
+          },
+          "0,0": {
+            "size": [
+              2,
+              1
+            ],
+            "content": {
+              "_type": "Command",
+              "_source0": "network_table:///SmartDashboard/Toggle Winch",
+              "_title": "Toggle Winch"
+            }
+          },
+          "0,1": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Pitch Position",
+              "_title": "Pitch Position"
+            }
+          },
+          "1,1": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Scissor Position",
+              "_title": "Scissor Position"
+            }
+          },
+          "12,1": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Left Position",
+              "_title": "Left Position"
+            }
+          },
+          "13,1": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Right Position",
+              "_title": "Right Position"
+            }
+          },
+          "14,1": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Yaw Position",
+              "_title": "Yaw Position"
+            }
+          },
+          "0,2": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Flywheel Velocity",
+              "_title": "Flywheel Velocity"
+            }
+          },
+          "1,2": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Yaw Forward Limit",
+              "_title": "Yaw Forward Limit"
+            }
+          },
+          "0,3": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Yaw Backward Limit",
+              "_title": "Yaw Backward Limit"
+            }
           }
         }
       }
@@ -277,9 +376,9 @@
     }
   ],
   "windowGeometry": {
-    "x": -7.199999809265137,
-    "y": -7.199999809265137,
-    "width": 1550.4000244140625,
-    "height": 838.4000244140625
+    "x": -6.400000095367432,
+    "y": 1.600000023841858,
+    "width": 1547.199951171875,
+    "height": 828.7999877929688
   }
 }
